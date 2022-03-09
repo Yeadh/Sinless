@@ -2278,3 +2278,40 @@ label {
     left: auto;
     right: 0;
 }
+/* 9. Promo-services */
+.promo-services-item {
+    display: flex;
+    align-items: flex-start;
+}
+.promo-services-item .icon {
+    color: #4d4d4d;
+    margin-right: 18px;
+    max-width: 35px;
+    flex: 0 0 35px;
+}
+.promo-services-item .icon img {
+    display: inline-block;
+    height: 90px;
+    padding-right: 15px;
+    filter: drop-shadow(5px 4px 6px black);
+}
+.promo-services-item .content {
+    flex-grow: 1;
+}
+.promo-services-item .content h6 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 2px;
+    transition: .3s linear;
+}
+.promo-services-item .content p {
+	margin-bottom: 0;
+}
+.promo-services .icon{
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 30px;
+}
