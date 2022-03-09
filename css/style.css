@@ -249,7 +249,7 @@ label {
     width: 100%;
     background: #1d142c;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     opacity: .9;
 }
 
@@ -371,7 +371,30 @@ label {
         opacity: 0;
     }
 }
-
+#videoBG {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    width: 100%;
+    max-width: inherit;
+    height: auto;
+}
+@media(min-aspect-ratio:16/9) {
+    #videoBG {
+        width: 100%;
+        height: auto;
+    }
+}
+.slider-bg {
+    position: relative;
+    min-height: 760px;
+    display: flex !important;
+    align-items: center;
+    padding: 120px 0;
+    z-index: 1;
+}
 /* About */
 .cosmok-about-area {
     padding: 60px 0 120px 0;
@@ -1103,7 +1126,6 @@ label {
 }
 /* Discount */
 .discount-product-area {
-    background: #f8f2e2;
     padding: 100px 0 70px;
 }
 .discount-product-item {
