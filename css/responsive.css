@@ -1,6 +1,8 @@
 /* Extra large devices (large desktops, 1800px and up) */
-@media (max-width: 1800px) {
-
+@media (max-width: 500px) {
+.token-item {
+    display: block;
+}
 
 }
 
