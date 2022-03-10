@@ -25,12 +25,15 @@
 
 /* 1. Theme default css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
- body {
+body {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: normal;
 	font-size: 16px;
 	color: #36363f;
 	font-style: normal;
+}
+:root {
+    scroll-behavior: smooth;
 }
 .img {
 	max-width: 100%;
@@ -375,11 +378,14 @@ label {
     position: absolute;
     left: 0;
     top: 50%;
+    right: 0;
     transform: translateY(-50%);
     z-index: -1;
     width: 100%;
     max-width: inherit;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 @media(min-aspect-ratio:16/9) {
     #videoBG {
@@ -389,7 +395,7 @@ label {
 }
 .slider-bg {
     position: relative;
-    min-height: 760px;
+    min-height: 485px;
     display: flex !important;
     align-items: center;
     padding: 120px 0;
@@ -449,7 +455,6 @@ label {
     font-weight: 700;
     color: #36add7;
     letter-spacing: 2px;
-    font-family: 'Lato', sans-serif;
 	display: block;
 	margin-bottom: 9px;
 }
@@ -457,7 +462,6 @@ label {
 	font-size: 30px;
 	color: #232323;
 	font-weight: 900;
-	font-family: 'Lato', sans-serif;
 	margin-bottom: 20px;
 }
 .cosmok-about-content > p {
@@ -536,14 +540,13 @@ label {
     right: 20px;
     z-index: 1;
     padding: 6px 12px;
-    font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-style: italic;
     line-height: 1;
     color: #fff;
 }
 .cos-product-thumb > span.tag {
-	background: #00a850;
+	background: #da2a2c;
 }
 .cos-product-thumb > span.discount {
 	background: #f4cd4e;
@@ -555,14 +558,13 @@ label {
 .cos-product-content .title {
     font-size: 18px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     color: #2d2d2d;
-    font-family: 'Lato', sans-serif;
     margin-bottom: 7px;
 }
-/* .cos-product-content .title a:hover {
-	color: #00a850;
-} */
+.cos-product-content .title a:hover {
+	color: #da2a2c;
+}
 .cos-product-content > span {
     display: block;
     font-size: 14px;
@@ -582,16 +584,6 @@ label {
     letter-spacing: -.5px;
     color: #ee513a;
 }
-.cos-product-content::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background-image: url(../img/shop/line.png);
-    height: 1px;
-    background-position: center;
-}
 .cos-product-nav-wrap .nav-tabs {
 	border: none;
 	justify-content: center;
@@ -607,15 +599,14 @@ label {
     border: 1px solid #eaeaea;
     padding: 12px 30px;
     margin-bottom: 0;
-    font-family: 'Lato', sans-serif;
 }
 .cos-product-nav-wrap .nav-tabs li {
     margin: 0 10px 15px;
 }
 .cos-product-nav-wrap .nav-tabs .nav-link.active {
 	color: #fff;
-	border-color: #00a850;
-	background: #00a850;
+	border-color: #da2a2c;
+	background: #da2a2c;
 	box-shadow: 0px 3px 35px 0px rgba(82, 82, 82, 0.19);
 }
 
@@ -745,12 +736,12 @@ label {
     background: #fff;
     font-size: 14px;
     letter-spacing: 0;
-    padding: 16px 17px;
+    padding: 17px 17px;
     text-transform: capitalize;
     font-weight: 500;
     box-shadow: 0px 20px 30px 0px rgba(0, 0, 29, 0.14);
     border-radius: 3px;
-	min-width: auto;
+	min-width: 120px;
 	width: auto;
     font-family: 'Poppins', sans-serif;
 }
@@ -1058,15 +1049,15 @@ label {
 
 
 /* Banner */
-.menu-nav .logo img {
+/* .menu-nav .logo img {
     width: 190px;
-}
+} */
 .banner-bg {
     background-image: url(../img/banner/banner_bg.png);
     min-height: 1085px;
     background-size: cover;
     background-position: top center;
-    padding: 267px 0 0;
+    padding: 200px 0 100px;
 }
 .banner-img {
     text-align: right;
@@ -1104,7 +1095,9 @@ label {
 	margin-top: 15px;
 }
 .banner-btn-wrap .btn:first-child {
-	margin-right: 45px;
+    margin-right: 45px;
+    min-width: 150px;
+    padding: 18px 39px;
 }
 .banner-product-img {
     position: absolute;
@@ -1147,7 +1140,6 @@ label {
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-	font-family: 'Lato', sans-serif;
     color: #1e1d23;
     font-weight: 700;
 	letter-spacing: 1px;
@@ -1158,8 +1150,13 @@ label {
     font-size: 22px;
     color: #232323;
     margin-bottom: 15px;
-    line-height: 1.4;
+    line-height: 1.2;
 }
+.discount-product-item .content .btn {
+    padding: 14px 20px;
+    min-width: unset;
+}
+
 .discount-product-item .content > .cos-btn {
     padding: 19px 23px;
 	box-shadow: none;
@@ -1228,7 +1225,7 @@ label {
 
 /* Features */
 .features-area {
-	padding: 135px 0 0;
+	padding: 115px 0 90px;
 }
 .section-title .title {
     font-size: 30px;
@@ -1722,7 +1719,7 @@ label {
 	background-image: url(../img/bg/newsletter_bg.jpg);
 	background-position: center;
 	background-size: cover;
-	padding: 235px 0 190px;
+	padding: 120px 0 120px;
 }
 .newsletter-form {
     position: relative;
@@ -1880,22 +1877,8 @@ label {
 }
 .breadcrumb-overflow {
     overflow: hidden;
-    padding: 100px 0 0px;
+    padding: 185px 0 100px;
     position: relative;
-}
-.breadcrumb-bg::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -11px;
-    width: 100%;
-    height: 11px;
-    background-image: url(../img/bg/breadcrumb_line.png);
-    background-size: cover;
-    background-position: center;
-}
-.breadcrumb-inner {
-    padding: 0 85px;
 }
 .breadcrumb-content .title {
     font-size: 52px;
@@ -1916,7 +1899,6 @@ label {
     padding: 15px 25px;
 }
 .breadcrumb-content .breadcrumb .breadcrumb-item {
-    font-family: 'Oswald', sans-serif;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2109,18 +2091,10 @@ label {
     border: 6px solid #ebebeb;
 }
 .shop-perched-info .btn {
-    background-image: linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
-    background-image: -webkit-linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
-    background-image: -ms-linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
     border-radius: 50px;
     margin-bottom: 15px;
-	color:white;
-}
-.shop-perched-info .btn:hover {
-    background-image: linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
-    background-image: -webkit-linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
-    background-image: -ms-linear-gradient(to right, #da2a2c 0%, #f96541 50%, #da2a2c 100%);
-    color: #1c1d20;
+    color: white;
+    padding: 16px 25px;
 }
 
 .shop-details-bottom .title {
@@ -2304,6 +2278,7 @@ label {
 .promo-services-item {
     display: flex;
     align-items: flex-start;
+    margin: 0 0 20px;
 }
 .promo-services-item .icon {
     color: #4d4d4d;
